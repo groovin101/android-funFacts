@@ -3,10 +3,12 @@ package com.groovin101.funfacts;
 import android.graphics.Color;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import java.util.Random;
 
@@ -14,6 +16,7 @@ public class FunFactsActivity extends AppCompatActivity {
 
     private FactBook factBook = new FactBook();
     private ColorWheel colorWheel = new ColorWheel();
+    private static final String TAG = FunFactsActivity.class.getSimpleName();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -36,5 +39,9 @@ public class FunFactsActivity extends AppCompatActivity {
                 showFactButton.setTextColor(color);
             }
         });
+
+//        Toast myDebugMessage = Toast.makeText(this, "We have created the FunFactActivity!", Toast.LENGTH_LONG);
+//        myDebugMessage.show();
+        Log.d(TAG, "we are in the onCreate method yo");
     }
 }
